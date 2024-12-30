@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Group A","mentors": {} },
+  { "id": 2, "name": "Group B","mentors": {} },
+  { "id": 3, "name": "Group C","mentors": {} },
+  { "id": 4, "name": "Group D","mentors": {} },
+  { "id": 5, "name": "Group E","mentors": {} }
+]

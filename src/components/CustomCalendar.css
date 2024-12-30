@@ -1,0 +1,160 @@
+/* Main calendar container */
+.calendar-container {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Calendar controls */
+.calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-controls button {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.calendar-controls button:hover {
+  background-color: #0056b3;
+}
+
+.calendar-controls span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Calendar grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: 150px repeat(6, 1fr); /* 1 column for groups, 6 for days */
+  border-top: 1px solid #ddd;
+}
+
+/* Calendar header */
+.calendar-header {
+  display: contents;
+}
+
+.header-cell {
+  padding: 10px;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  border-right: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.header-cell:last-child {
+  border-right: none;
+}
+
+/* Rows for groups */
+.calendar-row {
+  display: contents;
+}
+
+.group-name {
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+  font-weight: bold;
+}
+
+/* Day cells */
+.day-cell {
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: white;
+  min-height: 50px;
+}
+
+.day-cell:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Event item */
+.event-item {
+  background-color: #28a745;
+  color: white;
+  padding: 4px 6px;
+  border-radius: 4px;
+  margin: 2px 0;
+  font-size: 12px;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80%;
+  overflow-y: auto;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.modal-content button {
+  background-color: #646cff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 300ms;
+}
+
+.modal-content button:hover {
+  background-color: #505baf;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.modal-content select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

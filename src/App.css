@@ -1,0 +1,191 @@
+/* Variables for consistent colors and theming */
+:root {
+  --primary-color: #2b6cb0;    /* A trustworthy blue, common in education */
+  --secondary-color: #7c3aed;  /* Purple - associated with wisdom and creativity */
+  --success-color: #059669;    /* Green - growth and progress */
+  --danger-color: #dc2626;     /* Red - used sparingly for important actions */
+  --background-light: #f8fafc;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
+}
+
+/* Calendar Container - Make it responsive */
+.calendar-container {
+  margin: 1rem auto;
+  max-width: 100%;
+  overflow-x: auto;  /* Allow horizontal scrolling on small screens */
+  padding: 0 1rem;
+}
+
+/* Calendar Controls - Responsive adjustments */
+.calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.calendar-controls button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.calendar-controls button:hover {
+  background-color: #1e4d8d;
+  transform: translateY(-1px);
+}
+
+.calendar-controls span {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);  /* Responsive font size */
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+/* Calendar Grid - Improved responsiveness */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) repeat(6, minmax(140px, 1fr));
+  gap: 0.5rem;
+  min-width: 960px;  /* Minimum width before horizontal scroll */
+}
+
+/* Header styling */
+.header-cell {
+  font-weight: 600;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Day Cells - Education themed */
+.day-cell {
+  position: relative;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  min-height: 160px;
+  background-color: var(--background-light);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.day-cell:hover {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Event Card - Scholar theme */
+.event-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--secondary-color);
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 600;
+}
+
+/* Button Container */
+.event-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Action Buttons */
+.event-card button {
+  flex: 1;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+/* Edit button */
+.event-card button:nth-of-type(1) {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.event-card button:nth-of-type(1):hover {
+  background-color: #047857;
+}
+
+/* Delete button */
+.event-card button:nth-of-type(2) {
+  background-color: white;
+  border-color: var(--danger-color);
+  color: var(--danger-color);
+}
+
+.event-card button:nth-of-type(2):hover {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .calendar-grid {
+    font-size: 0.9rem;
+  }
+  
+  .day-cell {
+    min-height: 140px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-container {
+    margin: 0.5rem;
+  }
+  
+  .calendar-controls {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .event-card {
+    padding: 8px;
+  }
+  
+  .event-card-actions {
+    flex-direction: column;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .event-card,
+  .day-cell,
+  button {
+    transition: none;
+  }
+}
